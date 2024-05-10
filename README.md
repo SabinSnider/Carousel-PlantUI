@@ -1,7 +1,23 @@
 
 # Carousel-PlantUI
 
-First, run the development server:
+## Setup
+
+Get the code by either cloning this repository using git
+
+```
+git clone https://github.com/SabinSnider/Carousel-PlantUI
+```
+
+... or [downloading source code] code as a zip archive.
+
+Once downloaded, open the terminal in the project directory, and install dependencies with:
+
+```
+npm install
+
+
+Then, run the development server:
 
 ```bash
 npm run dev

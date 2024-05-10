@@ -1,6 +1,7 @@
 import Image from "next/image";
 import EmblaCarousel from "./components/EmblaCrousel";
 import { EmblaOptionsType } from "embla-carousel";
+import './css/embla.css';
 
 const OPTIONS: EmblaOptionsType = { loop: true ,}
 

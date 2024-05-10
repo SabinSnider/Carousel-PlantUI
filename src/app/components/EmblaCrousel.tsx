@@ -15,7 +15,11 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 
 import { useCallback, useEffect, useRef } from "react";
 import sliderData from "./sliderData";
-import { PrevButton, NextButton, usePrevNextButtons } from "./EmblaCarouselArrowButtons";
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButtons";
 
 type PropType = {
   options?: EmblaOptionsType;
@@ -120,21 +124,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     <div className="flex flex-row-reverse">
                       <div>
                         {/* title */}
-                        <h1 className=" w-full  rounded-full text-xl lg:text-2xl text-white font-extrabold">
+                        <h1 className=" w-full  rounded-full text-xl lg:text-2xl font-extrabold">
                           {item.title}
                         </h1>
 
-                        <h2 className=" w-full  rounded-full text-xl lg:text-2xl text-white font-extrabold">
+                        <h2 className=" w-full  rounded-full text-xl lg:text-2xl font-extrabold">
                           {item.subtitle}
                         </h2>
                       </div>
                       <div>
-                        <a
-                          role="button"
-                          className="absolute top-1/2 left-1/3  ml-7  text-white text-sm px-4 py-2  border rounded-full"
-                        >
-                          + Add to Cart
-                        </a>
+                      
+                        <button type="button" className ="absolute top-1/2 left-1/3  ml-7 text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700">+Add to Cart</button>
                       </div>
                     </div>
                   </div>

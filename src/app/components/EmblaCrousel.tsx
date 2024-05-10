@@ -15,6 +15,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 
 import { useCallback, useEffect, useRef } from "react";
 import sliderData from "./sliderData";
+import { PrevButton, NextButton, usePrevNextButtons } from "./EmblaCarouselArrowButtons";
 
 type PropType = {
   options?: EmblaOptionsType;
@@ -26,6 +27,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]); // to autoplay slider
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -136,7 +144,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           })}
         </div>
       </div>
-     
+      <div className="embla__controls">
+        <div className="embla__buttons">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
+      </div>
     </div>
   );
 };

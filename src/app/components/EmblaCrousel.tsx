@@ -14,6 +14,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
 import { useCallback, useEffect, useRef } from "react";
+import sliderData from "./sliderData";
 
 type PropType = {
   options?: EmblaOptionsType;
